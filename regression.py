@@ -14,13 +14,8 @@ import matplotlib.pyplot as plt
 def plot_reg_graph(N_DAYS_AGO,df):
     
     max_date = df["Date"].max().date()
-    
-    start_date = max_date - timedelta(days=N_DAYS_AGO)
-
-    #data_df = df    
+    start_date = max_date - timedelta(days=N_DAYS_AGO)  
     data_df = df[df['Date'] >= pd.to_datetime(start_date)]
-    
-
     data_df.set_index(['Date'], inplace=True)
     data_df.index = data_df.index.map(pd.Timestamp.toordinal)
     
@@ -33,7 +28,7 @@ def plot_reg_graph(N_DAYS_AGO,df):
     
     # plot the Adj Close data
     ax1 = data_df.plot(y='Close', c='k', figsize=(15, 6), grid=True, legend=False,
-                  title=f'Close with Regression Line from {start_date}')
+                  title=f'Close with Regression Line from {start_date}  - {N_DAYS_AGO} Days')
     
     # add a regression line
     sns.regplot(data=data, x='Date', y='Close', ax=ax1, color='magenta', scatter_kws={'s': 7}, label='Linear Model', scatter=False)
