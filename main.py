@@ -8,10 +8,10 @@ Created on Fri May  5 19:23:19 2023
 
 import requests
 import pandas as pd
-import moving_averages as mv
-import regression as reg
 import json
-import indicator as ind
+from scripts import moving_averages as mv
+from scripts import regression as reg
+from scripts import indicator as ind
 
 
 def getDataFrame(url):
