@@ -34,7 +34,7 @@ def getFigure(df):
 
 
     #Plotting Graph
-    plot_graph = df_avg[['MA30','MA90','MA07','MonthlyAvg']].plot(label='Liquidity',figsize=(16, 8)).get_figure()
+    plot_graph = df_avg[['MA30','MA90','MA07','MonthlyAvg']].plot(label='Liquidity',figsize=(16, 8),title='Monthly and Moving Averages Chart for 90,30 & 7 days').get_figure()
     
     return plot_graph
     
